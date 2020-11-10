@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Bootstrap Style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Vue Js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <div id="taskApp" class="col-sm-8 col-sm-offset-2">
+        <img src="./img/logo-boolean.png" alt="logo">
+
+        <!-- Form -->
+        <div class="panel panel-default">
+          <h2 class="text-center">New Todo</h2>
+          <form v-on:submit="addTask" class="app-form">
+            <input type="text" class="form-control" v-model="tasks.title">
+            <input type="submit" value="Aggiungere" class="btn btn-block btn-primary">
+          </form>
+        </div>
+
+        <!-- Table -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Spunta</th>
+              <th>Attività da fare</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="task in tasks">
+              <td>
+                <input type="checkbox" v-model="task.done">
+              </td>
+              <td>
+                <span :class="{taskDone: task.done}">
+                  {{ task.title }}
+                </span>
+              </td>
+              <td>
+                <button
+                  v-on:click="deleteTask(task)"
+                  class="btn btn-block btn-danger">
+                  Elimina
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Js -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

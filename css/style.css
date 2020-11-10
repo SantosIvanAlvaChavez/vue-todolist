@@ -1,0 +1,36 @@
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+/* FORM */
+.panel {
+  border: none;
+}
+
+img {
+  width: 400px;
+  display: block;
+  margin: 30px auto;
+}
+
+.app-form input {
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.taskDone {
+  text-decoration: line-through;
+}
